@@ -19,3 +19,88 @@
 
 
 // header
+// Menu Button
+
+.menu-button {
+  display: none;
+  cursor: pointer;
+  margin: $grid-column-gutter/6 $grid-column-gutter/4;
+  position: absolute;
+  left: 0;
+  top:0;
+
+  &.active {
+    .menu-button-inner {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}
+
+.menu-button-box {
+  width: rem-calc(50);
+  height: rem-calc(50);
+  padding: rem-calc(10);
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  transition: transform 0.25s;
+  background-color: $dark-blue;
+}
+
+.menu-button-label {
+  color: $dark-blue;
+  vertical-align: middle;
+}
+
+.menu-button-inner {
+  display: block;
+  top: 100%;
+  margin-top: rem-calc(-27);
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  &,
+  &::after,
+  &::before {
+    width: rem-calc(30);
+    height: rem-calc(5);
+    background-color: $white;
+    border-radius: rem-calc(1);
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    top: rem-calc(11);
+    right: rem-calc(0);
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  }
+
+  &::after {
+    bottom: rem-calc(11);
+    right: rem-calc(0);
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+}

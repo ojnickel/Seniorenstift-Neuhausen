@@ -40,47 +40,27 @@
 //  35. Title Bar
 //  36. Tooltip
 //  37. Top Bar
-@import "util/util";
+@import 'util/util';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 // 1. Global
 // ---------
 
 $global-font-size: 112.5%;
-$global-width: rem-calc(1440);
+$global-width: rem-calc(1920);
 $global-lineheight: 1.5;
-$foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37
-);
+$foundation-palette: ( primary: #1779ba, secondary: #767676, success: #3adb76, warning: #ffae00, alert: #cc4b37, );
 $black: #000000;
 $white: #ffffff;
-$green: #39686a;
-$light-green: #e4f0f1;
-$medium-green: #9ab3af;
-$dark-green: #213d3e;
-$red: #981134;
-$light-red: #fbdfe7;
-$tuerkis: #9ab3af;
-$light-tuerkis: #dee6e5;
-$orange: #f29400;
-$light-orange: #ffedd0;
-$beige:#9a9966;
-$light-beige:#deddcc;
-$brown:#986566;
-$light-brown:#e3d5d5;
-$blue: #204773;
-$light-blue:#d2e1f3;
-$light-gray: #eee;
-$medium-green: #9ab3af;
-$dark-green: #213d3e;
-$gray: #999999;
-$dark-gray: #647b7d;
-$turquoise: #22bdbf;
-$blue: #204773;
-$light-blue:#d2e1f3;
+$light-gray: #eeeeee;
+$gray: #969895;
+$dark-gray: #444444;
+$light-blue: #E1ECF1;
+$dark-blue: #033F67;
+$blue: #B0D2DF;
+$peach: #FEA674;
+$red: #F40C21;
+$green: #C4D35D;
+$cyan: #157CB0;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Open Sans', sans-serif;
@@ -98,13 +78,7 @@ $print-transparent-backgrounds: true;
 // 2. Breakpoints
 // --------------
 
-$breakpoints: (
-  small: 0,
-  medium: 640px,
-  large: 768px,
-  xlarge: 1024px,
-  xxlarge: 1280px
-);
+$breakpoints: ( small: 0, medium: 640px, large: 768px, xlarge: 1024px, xxlarge: 1440px, );
 $print-breakpoint: large;
 $breakpoint-classes: (medium large xlarge xxlarge);
 
@@ -123,66 +97,34 @@ $block-grid-max: 8;
 $header-font-family: $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
-$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+$font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: $black;
 $header-lineheight: 1.4;
-$header-margin-bottom: 2rem;
+$header-margin-bottom: 1rem;
 $header-styles: (
   small: (
-    "h2": (
-      "font-size": 40
-    ),
-    "h3": (
-      "font-size": 30,
-      "margin-bottom": rem-calc(10)
-    ),
-    "h4": (
-      "font-size": 20
-    ),
-    "h5": (
-      "font-size": 17
-    ),
-    "h6": (
-      "font-size": 16
-    )
-  ),
+  'h1': ('font-size': 34),
+  'h2': ('font-size': 30),
+  'h3': ('font-size': 28),
+  'h4': ('font-size': 20),
+  'h5': ('font-size': 17),
+  'h6': ('font-size': 16), ),
+
   medium: (
-    "h2": (
-      "font-size": 40
-    ),
-    "h3": (
-      "font-size": 30,
-      "margin-bottom": rem-calc(10)
-    ),
-    "h4": (
-      "font-size": 23
-    ),
-    "h5": (
-      "font-size": 20
-    ),
-    "h6": (
-      "font-size": 16
-    )
-  ),
-  xxlarge: (
-    "h2": (
-      "font-size": 40
-    ),
-    "h3": (
-      "font-size": 30,
-      "margin-bottom": rem-calc(10)
-    ),
-    "h4": (
-      "font-size": 27
-    ),
-    "h5": (
-      "font-size": 20
-    ),
-    "h6": (
-      "font-size": 16
-    )
-  )
-);
+  'h1': ('font-size': 50),
+  'h2': ('font-size': 40),
+  'h3': ('font-size': 34),
+  'h4': ('font-size': 23),
+  'h5': ('font-size': 20),
+  'h6': ('font-size': 16), ),
+
+  xlarge: (
+  'h1': ('font-size': 60),
+  'h2': ('font-size': 50),
+  'h3': ('font-size': 44),
+  'h4': ('font-size': 27),
+  'h5': ('font-size': 20),
+  'h6': ('font-size': 16), ), );
 
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
@@ -190,15 +132,17 @@ $header-small-font-color: $gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
+$paragraph-font-size: rem-calc(24);
+$paragraph-color: $black;
 $code-color: $black;
 $code-font-family: $font-family-monospace;
 $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $white;
+$anchor-color: $dark-blue;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
-$anchor-text-decoration: none;
+$anchor-text-decoration: underline;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
 $hr-border: 1px solid $gray;
@@ -217,7 +161,7 @@ $blockquote-padding: rem-calc(9 20 0 19);
 $blockquote-border: 1px solid $gray;
 $cite-font-size: rem-calc(13);
 $cite-color: $dark-gray;
-$cite-pseudo-content: "\2014 \0020";
+$cite-pseudo-content: '\2014 \0020';
 $keystroke-font: $font-family-monospace;
 $keystroke-color: $black;
 $keystroke-background: $light-gray;
@@ -303,12 +247,7 @@ $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: 0;
-$button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem
-);
+$button-sizes: ( tiny: 0.6rem, small: 0.75rem, default: 0.9rem, large: 1.25rem, );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
@@ -320,7 +259,7 @@ $button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
 
 $buttongroup-margin: 1rem;
 $buttongroup-spacing: 1px;
-$buttongroup-child-selector: ".button";
+$buttongroup-child-selector: '.button';
 $buttongroup-expand-max: 6;
 $buttongroup-radius-on-each: true;
 
@@ -353,18 +292,9 @@ $card-margin: $global-margin;
 // ----------------
 
 $closebutton-position: right top;
-$closebutton-offset-horizontal: (
-  small: 0.66rem,
-  medium: 1rem
-);
-$closebutton-offset-vertical: (
-  small: 0.33em,
-  medium: 0.5rem
-);
-$closebutton-size: (
-  small: 1.5em,
-  medium: 2em
-);
+$closebutton-offset-horizontal: ( small: 0.66rem, medium: 1rem, );
+$closebutton-offset-vertical: ( small: 0.33em, medium: 0.5rem, );
+$closebutton-size: ( small: 1.5em, medium: 2em, );
 $closebutton-lineheight: 1;
 $closebutton-color: $dark-gray;
 $closebutton-color-hover: $black;
@@ -387,11 +317,7 @@ $dropdown-border: 1px solid $gray;
 $dropdown-font-size: 1rem;
 $dropdown-width: 300px;
 $dropdown-radius: $global-radius;
-$dropdown-sizes: (
-  tiny: 100px,
-  small: 200px,
-  large: 400px
-);
+$dropdown-sizes: ( tiny: 100px, small: 200px, large: 400px, );
 
 // 18. Dropdown Menu
 // -----------------
@@ -497,7 +423,7 @@ $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
 $offcanvas-exit-background: rgba($white, 0.25);
-$maincontent-class: "off-canvas-content";
+$maincontent-class: 'off-canvas-content';
 
 // 25. Orbit
 // ---------
@@ -545,10 +471,7 @@ $progress-radius: $global-radius;
 // --------------------
 
 $responsive-embed-margin-bottom: rem-calc(16);
-$responsive-embed-ratios: (
-  default: 4 by 3,
-  widescreen: 16 by 9
-);
+$responsive-embed-ratios: ( default: 4 by 3, widescreen: 16 by 9, );
 
 // 29. Reveal
 // ----------
@@ -601,10 +524,7 @@ $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
-$table-row-stripe-hover: darken(
-  $table-background,
-  $table-color-scale + $table-hover-scale
-);
+$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
 $table-is-striped: true;
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;
