@@ -41,7 +41,7 @@
 //  36. Tooltip
 //  37. Top Bar
 @import "util/util";
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 // 1. Global
 // ---------
 
@@ -83,7 +83,7 @@ $blue: #204773;
 $light-blue:#d2e1f3;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: "Montserrat";
+$body-font-family: 'Open Sans', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
