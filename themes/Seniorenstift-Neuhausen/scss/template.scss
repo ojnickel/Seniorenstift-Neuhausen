@@ -14,20 +14,34 @@
 }
 
 // Globals
+.outer {
 
+}
+.section {
+  max-width: 100%;
+  margin: 0 auto;
 
+}
+.page-warp {
+  max-width: (1240);
+  margin: 0 auto;
+}
 
 
 // header
 // Menu Button
 
 .menu-button {
-  display: none;
+  padding: rem-calc(12);
+  display: inline-block;
   cursor: pointer;
-  margin: $grid-column-gutter/6 $grid-column-gutter/4;
-  position: absolute;
-  left: 0;
-  top:0;
+  font: inherit;
+  color: $white;
+  text-transform: none;
+  background-color: $dark-blue;
+  border: 0;
+  margin: 0;
+  overflow: visible;
 
   &.active {
     .menu-button-inner {
@@ -44,32 +58,43 @@
       &::after {
         bottom: 0;
         transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: bottom 0.1s ease-out,
+          transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
+  }
+
+  &:focus,
+  &:hover {
+    .menu-button-box {
+      transform: scale(1.2);
+    }
+  }
+
+  &:focus {
+    background:$dark-blue;
   }
 }
 
 .menu-button-box {
-  width: rem-calc(50);
-  height: rem-calc(50);
-  padding: rem-calc(10);
+  width: rem-calc(30);
+  height: rem-calc(24);
   display: inline-block;
   position: relative;
   vertical-align: middle;
   transition: transform 0.25s;
-  background-color: $dark-blue;
 }
 
 .menu-button-label {
-  color: $dark-blue;
+  display: inline-block;
+  margin-left: rem-calc(8);
   vertical-align: middle;
 }
 
 .menu-button-inner {
   display: block;
-  top: 100%;
-  margin-top: rem-calc(-27);
+  top: 50%;
+  margin-top: rem-calc(-2);
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
@@ -77,9 +102,9 @@
   &::after,
   &::before {
     width: rem-calc(30);
-    height: rem-calc(5);
+    height: rem-calc(4);
     background-color: $white;
-    border-radius: rem-calc(1);
+    border-radius: rem-calc(4);
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
@@ -93,14 +118,25 @@
   }
 
   &::before {
-    top: rem-calc(11);
-    right: rem-calc(0);
+    top: rem-calc(-10);
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
   }
 
   &::after {
-    bottom: rem-calc(11);
-    right: rem-calc(0);
-    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    bottom: rem-calc(-10);
+    transition: bottom 0.1s 0.25s ease-in,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
+}
+.js {
+  #main-menu {
+    display: none;
+  }
+}
+
+
+//Hauptnavigation
+.main-nav{
+
+  background: $light-blue;
 }

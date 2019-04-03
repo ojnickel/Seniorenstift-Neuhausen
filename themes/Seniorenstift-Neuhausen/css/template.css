@@ -1693,13 +1693,25 @@ ul.no-bullet, ol.no-bullet {
 .clearfix::after {
   clear: both; }
 
+.section {
+  max-width: 100%;
+  margin: 0 auto; }
+
+.page-warp {
+  max-width: 1240;
+  margin: 0 auto; }
+
 .menu-button {
-  display: none;
+  padding: 0.66667rem;
+  display: inline-block;
   cursor: pointer;
-  margin: 0.55556rem 0.83333rem;
-  position: absolute;
-  left: 0;
-  top: 0; }
+  font: inherit;
+  color: #ffffff;
+  text-transform: none;
+  background-color: #033F67;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
   .menu-button.active .menu-button-inner {
     -webkit-transform: rotate(225deg);
         -ms-transform: rotate(225deg);
@@ -1722,37 +1734,42 @@ ul.no-bullet, ol.no-bullet {
       transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .menu-button:focus .menu-button-box, .menu-button:hover .menu-button-box {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2); }
+  .menu-button:focus {
+    background: #033F67; }
 
 .menu-button-box {
-  width: 2.77778rem;
-  height: 2.77778rem;
-  padding: 0.55556rem;
+  width: 1.66667rem;
+  height: 1.33333rem;
   display: inline-block;
   position: relative;
   vertical-align: middle;
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
-  transition: transform 0.25s, -webkit-transform 0.25s;
-  background-color: #033F67; }
+  transition: transform 0.25s, -webkit-transform 0.25s; }
 
 .menu-button-label {
-  color: #033F67;
+  display: inline-block;
+  margin-left: 0.44444rem;
   vertical-align: middle; }
 
 .menu-button-inner {
   display: block;
-  top: 100%;
-  margin-top: -1.5rem;
+  top: 50%;
+  margin-top: -0.11111rem;
   -webkit-transition-duration: 0.22s;
           transition-duration: 0.22s;
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .menu-button-inner, .menu-button-inner::after, .menu-button-inner::before {
     width: 1.66667rem;
-    height: 0.27778rem;
+    height: 0.22222rem;
     background-color: #ffffff;
-    border-radius: 0.05556rem;
+    border-radius: 0.22222rem;
     position: absolute;
     -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
@@ -1766,14 +1783,18 @@ ul.no-bullet, ol.no-bullet {
     content: "";
     display: block; }
   .menu-button-inner::before {
-    top: 0.61111rem;
-    right: 0;
+    top: -0.55556rem;
     -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
   .menu-button-inner::after {
-    bottom: 0.61111rem;
-    right: 0;
+    bottom: -0.55556rem;
     -webkit-transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.js #main-menu {
+  display: none; }
+
+.main-nav {
+  background: #E1ECF1; }
