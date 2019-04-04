@@ -1,47 +1,57 @@
 @charset 'utf-8';
 @import "settings";
+@import "mixins";
 @import "foundation";
-@import "motion-ui";
 @include foundation-global-styles;
-@include foundation-grid;
 @include foundation-typography;
-@include foundation-breadcrumbs;
+@include foundation-forms;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
-.clearfix {
-  @include clearfix;
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+
+%clearfix {
+  @include clearfix();
 }
 
 // Globals
-.outer {
 
+.outer {
+  overflow: hidden;
+  max-width: 100%;
 }
+
 .section {
   max-width: 100%;
   margin: 0 auto;
-
 }
 .page-warp {
-  max-width: (1240);
+  max-width: rem-calc(1240);
   margin: 0 auto;
 }
 
-
 // header
+
 // Menu Button
 
 .menu-button {
-  padding: rem-calc(12);
   display: inline-block;
+  padding: rem-calc(10);
   cursor: pointer;
   font: inherit;
-  color: $white;
+  color: $dark-blue;
+  position: absolute;
   text-transform: none;
-  background-color: $dark-blue;
+  background-color: $light-blue;
   border: 0;
   margin: 0;
   overflow: visible;
+  top: 0;
+  left: 0;
 
   &.active {
     .menu-button-inner {
@@ -72,14 +82,14 @@
   }
 
   &:focus {
-    background:$dark-blue;
+    background: $light-blue;
   }
 }
 
 .menu-button-box {
-  width: rem-calc(30);
-  height: rem-calc(24);
-  display: inline-block;
+  width: rem-calc(62);
+  height: rem-calc(55);
+  display: block;
   position: relative;
   vertical-align: middle;
   transition: transform 0.25s;
@@ -87,24 +97,24 @@
 
 .menu-button-label {
   display: inline-block;
-  margin-left: rem-calc(8);
+
   vertical-align: middle;
 }
 
 .menu-button-inner {
   display: block;
   top: 50%;
-  margin-top: rem-calc(-2);
+
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
   &,
   &::after,
   &::before {
-    width: rem-calc(30);
-    height: rem-calc(4);
-    background-color: $white;
-    border-radius: rem-calc(4);
+    width: rem-calc(60);
+    height: rem-calc(8);
+    background-color: $dark-blue;
+    border-radius: 0;
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
@@ -118,12 +128,12 @@
   }
 
   &::before {
-    top: rem-calc(-10);
+    top: rem-calc(-15);
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
   }
 
   &::after {
-    bottom: rem-calc(-10);
+    bottom: rem-calc(-15);
     transition: bottom 0.1s 0.25s ease-in,
       transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
@@ -134,9 +144,35 @@
   }
 }
 
-
 //Hauptnavigation
-.main-nav{
-
+.main-nav {
+  width: 100%;
+  z-index: 1000;
   background: $light-blue;
+  position: absolute;
+}
+
+#main-menu {
+  padding-top: $grid-column-gutter*1.75;
+  list-style-type: none;
+  margin: 0;
+
+  a {
+    display: block;
+    padding: $grid-column-gutter/6 $grid-column-gutter/2;
+  }
+
+  .sub-menu {
+    list-style-type: none;
+  }
+}
+
+//logo
+.logo {
+  display: block;
+  padding-left: rem-calc(88);
+  img {
+    margin: $grid-column-gutter/4 0;
+    width: rem-calc(230);
+  }
 }
