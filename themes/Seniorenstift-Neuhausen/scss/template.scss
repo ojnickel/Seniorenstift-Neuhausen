@@ -13,18 +13,14 @@
 * ::before {
   box-sizing: border-box;
 }
-
 %clearfix {
   @include clearfix();
 }
-
 // Globals
-
 .outer {
   overflow: hidden;
   max-width: 100%;
 }
-
 .section {
   max-width: 100%;
   margin: 0 auto;
@@ -33,11 +29,8 @@
   max-width: rem-calc(1240);
   margin: 0 auto;
 }
-
 // header
-
 // Menu Button
-
 .menu-button {
   display: inline-block;
   padding: rem-calc(10);
@@ -52,19 +45,16 @@
   overflow: visible;
   top: 0;
   left: 0;
-
   &.active {
     .menu-button-inner {
       transform: rotate(225deg);
       transition-delay: 0.12s;
       transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-
       &::before {
         top: 0;
         opacity: 0;
         transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
       }
-
       &::after {
         bottom: 0;
         transform: rotate(-90deg);
@@ -73,19 +63,16 @@
       }
     }
   }
-
   &:focus,
   &:hover {
     .menu-button-box {
       transform: scale(1.2);
     }
   }
-
   &:focus {
     background: $light-blue;
   }
 }
-
 .menu-button-box {
   width: rem-calc(62);
   height: rem-calc(55);
@@ -94,20 +81,15 @@
   vertical-align: middle;
   transition: transform 0.25s;
 }
-
 .menu-button-label {
   display: inline-block;
-
   vertical-align: middle;
 }
-
 .menu-button-inner {
   display: block;
   top: 50%;
-
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-
   &,
   &::after,
   &::before {
@@ -120,18 +102,15 @@
     transition-duration: 0.15s;
     transition-timing-function: ease;
   }
-
   &::after,
   &::before {
     content: "";
     display: block;
   }
-
   &::before {
     top: rem-calc(-15);
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
   }
-
   &::after {
     bottom: rem-calc(-15);
     transition: bottom 0.1s 0.25s ease-in,
@@ -143,7 +122,6 @@
     display: none;
   }
 }
-
 //Hauptnavigation
 .main-nav {
   width: 100%;
@@ -151,28 +129,121 @@
   background: $light-blue;
   position: absolute;
 }
-
 #main-menu {
-  padding-top: $grid-column-gutter*1.75;
+  padding-top: $grid-column-gutter * 1.75;
   list-style-type: none;
   margin: 0;
-
   a {
     display: block;
     padding: $grid-column-gutter/6 $grid-column-gutter/2;
   }
-
   .sub-menu {
     list-style-type: none;
   }
 }
-
 //logo
 .logo {
-  display: block;
   padding-left: rem-calc(88);
   img {
     margin: $grid-column-gutter/4 0;
     width: rem-calc(230);
+  }
+}
+//Breadcrumb
+.breadcrumb {
+  display: none;
+}
+//Content
+.head-box {
+  padding: $grid-column-gutter/4;
+  background: $dark-blue;
+  color: $white;
+  display: flex;
+  flex-wrap: wrap;
+  h1 {
+    color: $white;
+    order: 2;
+  }
+  .h-category {
+    order: 1;
+  }
+}
+.content-box {
+  &.peach {
+    background: $peach;
+  }
+  background: $light-blue;
+  padding: $grid-column-gutter/6;
+  ul {
+    margin: 0;
+    li {
+      font-size: rem-calc(20);
+      padding: $grid-column-gutter/8;
+      &:nth-child(odd) {
+        background: $blue;
+      }
+      &:before {
+        content: "»";
+        margin-right: $grid-column-gutter/6;
+      }
+    }
+  }
+}
+.wp-block-column {
+  background: $white;
+}
+//teaser-box
+.teaser-box {
+  &.t-peach {
+    border-bottom: solid $peach rem-calc(4);
+  }
+  a img {
+    max-width: rem-calc(320);
+  }
+  .t-link {
+    padding: $grid-column-gutter $grid-column-gutter/6 0;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    img {
+      margin-left: rem-calc(-10);
+      margin-right: rem-calc(-10);
+    }
+    .symbol {
+      fill: #fff;
+      color: $black;
+      width: rem-calc(45);
+      height: rem-calc(45);
+      position: absolute;
+      top: rem-calc(57);
+      right: rem-calc(10);
+    }
+    h3 {
+      color: $dark-blue;
+      text-transform: uppercase;
+    }
+  }
+}
+//info-box
+.info-box {
+  background: $green;
+  .i-link {
+    padding: $grid-column-gutter $grid-column-gutter/6;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    color: $black;
+    img {
+      margin-left: -$grid-column-gutter/7;
+    }
+    .symbol {
+      fill: #444;
+      color: $dark-blue;
+      width: rem-calc(45);
+      height: rem-calc(45);
+      position: absolute;
+      top: rem-calc(57);
+      right: rem-calc(10);
+    }
   }
 }
