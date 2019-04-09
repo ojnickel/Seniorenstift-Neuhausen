@@ -1188,16 +1188,17 @@ select {
       font-size: 1rem;
       color: #000000; }
 
-.footer .wp-block-column {
-  padding: 3.33333rem 0.55556rem; }
-
-.footer #footer-main-menu,
-.footer #footer-service-menu {
-  margin: 0;
-  list-style: none; }
-
-.footer .copyright {
-  padding: 0.55556rem 0.55556rem;
-  margin: 0 auto; }
-  .footer .copyright p {
-    margin-bottom: 0; }
+.footer {
+  background: #B0D2DF; }
+  .footer .wp-block-column {
+    background: #B0D2DF;
+    padding: 3.33333rem 0.55556rem; }
+  .footer #footer-main-menu,
+  .footer #footer-service-menu {
+    margin: 0;
+    list-style: none; }
+  .footer .copyright {
+    padding: 0.55556rem 0.55556rem;
+    margin: 0 auto; }
+    .footer .copyright p {
+      margin-bottom: 0; }

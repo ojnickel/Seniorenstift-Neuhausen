@@ -248,7 +248,7 @@
   }
 }
 #quote {
-  padding:  $grid-column-gutter*2 $grid-column-gutter/6;
+  padding: $grid-column-gutter * 2 $grid-column-gutter/6;
   margin-bottom: 0;
   border: none;
   p {
@@ -261,7 +261,9 @@
   }
 }
 .footer {
+  background: $blue;
   .wp-block-column {
+    background: $blue;
     padding: $grid-column-gutter $grid-column-gutter/6;
   }
   #footer-main-menu,
@@ -270,7 +272,7 @@
     list-style: none;
   }
   .copyright {
-    padding:$grid-column-gutter/6 $grid-column-gutter/6;
+    padding: $grid-column-gutter/6 $grid-column-gutter/6;
     margin: 0 auto;
     p {
       margin-bottom: 0;
