@@ -50,6 +50,8 @@ img {
   display: block;
   cursor: pointer;
   position: absolute;
+  padding: $grid-column-gutter/4;
+  background-color: $blue;
   left: 0;
   top: 0;
 
@@ -75,14 +77,13 @@ img {
 }
 
 .menu-button-box {
-  width: rem-calc(50);
-  height: rem-calc(50);
-  padding: rem-calc(10);
+  width: rem-calc(60);
+  height: rem-calc(62);
   display: inline-block;
   position: relative;
   vertical-align: middle;
   transition: transform 0.25s;
-  background-color: $blue;
+
 }
 
 .menu-button-label {
@@ -94,14 +95,14 @@ img {
 .menu-button-inner {
   display: block;
   top: 100%;
-  margin-top: rem-calc(-27);
+  margin-top: rem-calc(-40);
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
   &,
   &::after,
   &::before {
-    width: rem-calc(30);
+    width: rem-calc(60);
     height: rem-calc(5);
     background-color: $white;
     border-radius: rem-calc(1);
@@ -129,6 +130,12 @@ img {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
+
+.js {
+  #main-menu {
+    display: none;
+  }
+}
 // Hauptnavigation
 
 #main-menu {
@@ -137,9 +144,8 @@ img {
   position: absolute;
   left: 0;
   right: 0;
-  top: $grid-column-gutter * 2;
+  top: $grid-column-gutter * 1.85;
   background: $blue;
-  display: none;
 
   a {
     display: block;

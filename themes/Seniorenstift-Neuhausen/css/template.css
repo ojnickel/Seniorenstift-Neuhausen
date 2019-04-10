@@ -984,6 +984,8 @@ img {
   display: block;
   cursor: pointer;
   position: absolute;
+  padding: 0.83333rem;
+  background-color: #B0D2DF;
   left: 0;
   top: 0; }
   .menu-button.active .menu-button-inner {
@@ -1010,17 +1012,15 @@ img {
       transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 .menu-button-box {
-  width: 2.77778rem;
-  height: 2.77778rem;
-  padding: 0.55556rem;
+  width: 3.33333rem;
+  height: 3.44444rem;
   display: inline-block;
   position: relative;
   vertical-align: middle;
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
-  transition: transform 0.25s, -webkit-transform 0.25s;
-  background-color: #B0D2DF; }
+  transition: transform 0.25s, -webkit-transform 0.25s; }
 
 .menu-button-label {
   color: #000000;
@@ -1030,13 +1030,13 @@ img {
 .menu-button-inner {
   display: block;
   top: 100%;
-  margin-top: -1.5rem;
+  margin-top: -2.22222rem;
   -webkit-transition-duration: 0.22s;
           transition-duration: 0.22s;
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .menu-button-inner, .menu-button-inner::after, .menu-button-inner::before {
-    width: 1.66667rem;
+    width: 3.33333rem;
     height: 0.27778rem;
     background-color: #ffffff;
     border-radius: 0.05556rem;
@@ -1065,15 +1065,17 @@ img {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
+.js #main-menu {
+  display: none; }
+
 #main-menu {
   list-style-type: none;
   margin: 0;
   position: absolute;
   left: 0;
   right: 0;
-  top: 6.66667rem;
-  background: #B0D2DF;
-  display: none; }
+  top: 6.16667rem;
+  background: #B0D2DF; }
   #main-menu a {
     display: block;
     color: #033F67;
