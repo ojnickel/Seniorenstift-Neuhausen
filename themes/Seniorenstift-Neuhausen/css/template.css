@@ -975,7 +975,7 @@ select {
 
 .menu-button {
   display: inline-block;
-  padding: 0.55556rem;
+  padding: 0.83333rem;
   cursor: pointer;
   font: inherit;
   color: #033F67;
@@ -1017,8 +1017,8 @@ select {
     background: #E1ECF1; }
 
 .menu-button-box {
-  width: 3.44444rem;
-  height: 3.05556rem;
+  width: 3.05556rem;
+  height: 2.5rem;
   display: block;
   position: relative;
   vertical-align: middle;
@@ -1039,8 +1039,8 @@ select {
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .menu-button-inner, .menu-button-inner::after, .menu-button-inner::before {
-    width: 3.33333rem;
-    height: 0.44444rem;
+    width: 3.05556rem;
+    height: 0.27778rem;
     background-color: #033F67;
     border-radius: 0;
     position: absolute;
@@ -1056,11 +1056,11 @@ select {
     content: "";
     display: block; }
   .menu-button-inner::before {
-    top: -0.83333rem;
+    top: -0.55556rem;
     -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
   .menu-button-inner::after {
-    bottom: -0.83333rem;
+    bottom: -0.55556rem;
     -webkit-transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);

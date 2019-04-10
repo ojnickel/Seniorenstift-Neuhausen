@@ -33,7 +33,7 @@
 // Menu Button
 .menu-button {
   display: inline-block;
-  padding: $grid-column-gutter/6;
+  padding: $grid-column-gutter/4;
   cursor: pointer;
   font: inherit;
   color: $dark-blue;
@@ -74,8 +74,8 @@
   }
 }
 .menu-button-box {
-  width: rem-calc(62);
-  height: rem-calc(55);
+  width: rem-calc(55);
+  height: rem-calc(45);
   display: block;
   position: relative;
   vertical-align: middle;
@@ -93,8 +93,8 @@
   &,
   &::after,
   &::before {
-    width: rem-calc(60);
-    height: rem-calc(8);
+    width: rem-calc(55);
+    height: rem-calc(5);
     background-color: $dark-blue;
     border-radius: 0;
     position: absolute;
@@ -108,11 +108,11 @@
     display: block;
   }
   &::before {
-    top: rem-calc(-15);
+    top: rem-calc(-10);
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
   }
   &::after {
-    bottom: rem-calc(-15);
+    bottom: rem-calc(-10);
     transition: bottom 0.1s 0.25s ease-in,
       transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
