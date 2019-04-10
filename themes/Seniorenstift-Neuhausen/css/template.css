@@ -966,11 +966,11 @@ select {
   max-width: 100%; }
 
 .section {
-  max-width: 100%;
+  max-width: 68.88889rem;
   margin: 0 auto; }
 
 .page-warp {
-  max-width: 68.88889rem;
+  max-width: 100%;
   margin: 0 auto; }
 
 .menu-button {
@@ -1081,7 +1081,7 @@ select {
   margin: 0; }
   #main-menu a {
     display: block;
-    padding: 0.55556rem 1.66667rem; }
+    padding: 0.83333rem 1.66667rem; }
   #main-menu .sub-menu {
     list-style-type: none; }
 
@@ -1115,14 +1115,16 @@ select {
 
 .content-box {
   background: #E1ECF1;
-  padding: 0.55556rem; }
+  padding: 0.83333rem; }
   .content-box.peach {
     background: #FEA674; }
   .content-box ul {
-    margin: -0.55556rem; }
+    list-style: none;
+    margin-left: -0.83333rem;
+    margin-right: -0.83333rem; }
     .content-box ul li {
       font-size: 1.11111rem;
-      padding: 0.41667rem; }
+      padding: 0.83333rem; }
       .content-box ul li:nth-child(odd) {
         background: #B0D2DF; }
       .content-box ul li:before {
@@ -1139,7 +1141,7 @@ select {
   max-width: 17.77778rem; }
 
 .teaser-box .t-link {
-  padding: 3.33333rem 0.55556rem 0;
+  padding: 3.33333rem 0.83333rem 0;
   text-decoration: none;
   display: block;
   position: relative; }
@@ -1161,7 +1163,7 @@ select {
 .info-box {
   background: #C4D35D; }
   .info-box .i-link {
-    padding: 3.33333rem 0.55556rem;
+    padding: 3.33333rem 0.83333rem;
     display: block;
     text-decoration: none;
     position: relative;
@@ -1178,7 +1180,7 @@ select {
       right: 0.55556rem; }
 
 #quote {
-  padding: 6.66667rem 0.55556rem;
+  padding: 6.66667rem 0.83333rem;
   margin-bottom: 0;
   border: none; }
   #quote p {
@@ -1192,7 +1194,7 @@ select {
   background: #B0D2DF; }
   .footer .wp-block-column {
     background: #B0D2DF;
-    padding: 3.33333rem 0.55556rem; }
+    padding: 3.33333rem 0.83333rem; }
   .footer #footer-main-menu,
   .footer #footer-service-menu {
     margin: 0;
@@ -1201,7 +1203,7 @@ select {
     .footer #footer-service-menu .color {
       color: #033F67; }
   .footer .copyright {
-    padding: 0.55556rem 0.55556rem;
+    padding: 0.83333rem 0.83333rem;
     margin: 0 auto; }
     .footer .copyright p {
       color: #033F67;
