@@ -1017,7 +1017,7 @@ select {
     background: #E1ECF1; }
 
 .menu-button-box {
-  width: 3.05556rem;
+  width: 2.77778rem;
   height: 2.5rem;
   display: block;
   position: relative;
@@ -1039,7 +1039,7 @@ select {
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .menu-button-inner, .menu-button-inner::after, .menu-button-inner::before {
-    width: 3.05556rem;
+    width: 2.77778rem;
     height: 0.27778rem;
     background-color: #033F67;
     border-radius: 0;
