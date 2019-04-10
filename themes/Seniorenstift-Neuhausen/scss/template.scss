@@ -175,7 +175,7 @@
   background: $light-blue;
   padding: $grid-column-gutter/6;
   ul {
-    margin: 0;
+    margin: 0 -$grid-column-gutter/6;
     li {
       font-size: rem-calc(20);
       padding: $grid-column-gutter/8;
@@ -270,11 +270,15 @@
   #footer-service-menu {
     margin: 0;
     list-style: none;
+    .color {
+      color: $dark-blue;
+    }
   }
   .copyright {
     padding: $grid-column-gutter/6 $grid-column-gutter/6;
     margin: 0 auto;
     p {
+      color: $dark-blue;
       margin-bottom: 0;
     }
   }
