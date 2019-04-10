@@ -267,6 +267,9 @@
   .wp-block-column {
     background: $blue;
     padding: $grid-column-gutter $grid-column-gutter/4;
+    p {
+      color: $dark-blue;
+    }
   }
   #footer-main-menu,
   #footer-service-menu {

@@ -1195,6 +1195,8 @@ select {
   .footer .wp-block-column {
     background: #B0D2DF;
     padding: 3.33333rem 0.83333rem; }
+    .footer .wp-block-column p {
+      color: #033F67; }
   .footer #footer-main-menu,
   .footer #footer-service-menu {
     margin: 0;
