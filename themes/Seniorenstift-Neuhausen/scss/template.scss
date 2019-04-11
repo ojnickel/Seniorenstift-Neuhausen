@@ -1,7 +1,7 @@
 @charset 'utf-8';
-@import 'settings';
-@import 'mixins';
-@import 'foundation';
+@import "settings";
+@import "mixins";
+@import "foundation";
 @include foundation-global-styles;
 @include foundation-typography;
 @include foundation-forms;
@@ -38,6 +38,21 @@
 .peach {
   background: $peach;
 }
+.headline-peach {
+  color: $peach;
+}
+.green {
+  background: $green;
+}
+.white {
+  background: $white;
+}
+.blue {
+  background: $blue;
+}
+.dark-blue {
+  color: $dark-blue;
+}
 
 img {
   width: 100%;
@@ -70,24 +85,24 @@ img {
       &::after {
         bottom: 0;
         transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: bottom 0.1s ease-out,
+          transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
   }
 }
 
 .menu-button-box {
-  width: rem-calc(60);
-  height: rem-calc(62);
+  width: rem-calc(55);
+  height: rem-calc(55);
   display: inline-block;
   position: relative;
   vertical-align: middle;
   transition: transform 0.25s;
-
 }
 
 .menu-button-label {
-  color: $black;
+  color: $dark-blue;
   vertical-align: middle;
   display: block;
 }
@@ -102,9 +117,9 @@ img {
   &,
   &::after,
   &::before {
-    width: rem-calc(60);
+    width: rem-calc(55);
     height: rem-calc(5);
-    background-color: $white;
+    background-color: $dark-blue;
     border-radius: rem-calc(1);
     position: absolute;
     transition-property: transform;
@@ -127,7 +142,8 @@ img {
   &::after {
     bottom: rem-calc(11);
     right: rem-calc(0);
-    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.25s ease-in,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
 
@@ -192,20 +208,24 @@ img {
   display: none;
 }
 //Boxen
-
 .box {
   padding: $grid-column-gutter / 4;
 
   a {
+    padding: $grid-column-gutter/2 $grid-column-gutter/4 0;
     display: block;
     position: relative;
+    margin-left: -$grid-column-gutter/4;
+    margin-right: -$grid-column-gutter/4;
+    margin-bottom: -$grid-column-gutter/4;
+    text-decoration: none;
   }
 
   .symbol {
-    width: rem-calc(75);
-    height: rem-calc(75);
+    width: rem-calc(60);
+    height: rem-calc(60);
     position: absolute;
-    top: $grid-column-gutter / 4;
+    top: $grid-column-gutter / 3.2;
     right: $grid-column-gutter / 4;
   }
 }
@@ -213,7 +233,7 @@ img {
 .head-box {
   background: $dark-blue;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column;
 
   .h-head {
     order: 2;
@@ -242,8 +262,91 @@ img {
     }
 
     &:before {
-      content: '»';
+      content: "»";
       margin-right: rem-calc(10);
     }
+  }
+}
+
+.teaser-box {
+  &.t-peach {
+    border-bottom: solid $peach rem-calc(4);
+  }
+}
+.info-box {
+}
+
+#quote {
+  border: none;
+  padding: $grid-column-gutter * 2 $grid-column-gutter/4;
+  p {
+    color: $dark-blue;
+    margin: 0;
+    cite {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+@include breakpoint(large) {
+  #quote {
+  p {
+    font-size: rem-calc(30);
+    cite {
+      font-size: rem-calc(22);
+    }
+  }
+
+
+  }
+}
+.footer {
+  padding-top: $grid-column-gutter;
+}
+.footer .wp-block-columns {
+}
+
+.footer .wp-block-column {
+  padding: $grid-column-gutter $grid-column-gutter/4 $grid-column-gutter/4;
+  p {
+    font-size: rem-calc(20);
+  }
+  a {
+    font-size: rem-calc(20);
+    color: $black;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background: $dark-blue;
+      color: $white;
+    }
+  }
+}
+#footer-main-menu,
+#footer-service-menu {
+  list-style: none;
+  margin: 0;
+  margin-left: -$grid-column-gutter/4;
+  margin-right:-$grid-column-gutter/4;
+  a {
+    display: block;
+    padding: $grid-column-gutter/6 $grid-column-gutter/4;
+  }
+}
+@include breakpoint(xlarge) {
+  .footer .wp-block-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer .wp-block-column {
+    width: 33%;
+  }
+}
+.copyright {
+  padding: $grid-column-gutter $grid-column-gutter/4 $grid-column-gutter/4;
+  p {
+    margin: 0;
   }
 }
