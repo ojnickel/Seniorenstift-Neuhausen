@@ -1,7 +1,7 @@
 @charset 'utf-8';
-@import "settings";
-@import "mixins";
-@import "foundation";
+@import 'settings';
+@import 'mixins';
+@import 'foundation';
 @include foundation-global-styles;
 @include foundation-typography;
 @include foundation-forms;
@@ -32,43 +32,46 @@
 .page-wrap {
   max-width: rem-calc(1280);
   margin: 0 auto;
+  padding: $grid-column-gutter/4;
 }
 // Farben
 
 .peach {
   background: $peach;
 }
-.headline-peach {
-  color: $peach;
-}
-.green {
-  background: $green;
-}
+
 .white {
   background: $white;
-}
-.blue {
-  background: $blue;
-}
-.dark-blue {
-  color: $dark-blue;
 }
 
 img {
   width: 100%;
   height: auto;
 }
-//Header
+
+p, ul, ol {
+  font-size: rem-calc(21);
+}
+
+@include breakpoint(xlarge) {
+  p, ul, ol {
+    font-size: rem-calc(26);
+  }
+}
+
+// Header
+.header {
+  position: relative;
+}
+// Menu
 // Menu Button
 
 .menu-button {
-  display: block;
   cursor: pointer;
-  position: absolute;
-  padding: $grid-column-gutter/4;
-  background-color: $blue;
-  left: 0;
-  top: 0;
+  background: $blue;
+  height: $grid-column-gutter*1.5;
+  margin-right: $grid-column-gutter/4;
+  width: $grid-column-gutter*1.5;
 
   &.active {
     .menu-button-inner {
@@ -77,54 +80,47 @@ img {
       transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
       &::before {
-        top: 0;
         opacity: 0;
+        top: 0;
         transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
       }
 
       &::after {
         bottom: 0;
         transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out,
-          transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
   }
 }
 
 .menu-button-box {
-  width: rem-calc(55);
-  height: rem-calc(55);
   display: inline-block;
+  height: rem-calc(65);
+  padding: rem-calc(16);
   position: relative;
-  vertical-align: middle;
   transition: transform 0.25s;
-}
-
-.menu-button-label {
-  color: $dark-blue;
-  vertical-align: middle;
-  display: block;
+  width: rem-calc(75);
 }
 
 .menu-button-inner {
   display: block;
-  top: 100%;
   margin-top: rem-calc(-40);
+  top: 100%;
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
   &,
   &::after,
   &::before {
-    width: rem-calc(55);
-    height: rem-calc(5);
     background-color: $dark-blue;
-    border-radius: rem-calc(1);
+    border-radius: rem-calc(2);
+    height: rem-calc(5);
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
     transition-timing-function: ease;
+    width: rem-calc(40);
   }
 
   &::after,
@@ -139,90 +135,83 @@ img {
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
   }
 
+
   &::after {
     bottom: rem-calc(11);
     right: rem-calc(0);
-    transition: bottom 0.1s 0.25s ease-in,
-      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
+}
+
+.menu-button-label {
+  color: $dark-blue;
+  display: block;
+  margin-top: -$grid-column-gutter/3.75;
+}
+// Hauptnavigation
+
+.main-nav {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+#main-menu {
+  background: $blue;
+  list-style-type: none;
+  margin: 0;
+  padding: $grid-column-gutter/2 0;
+
+  a {
+    color: $dark-blue;
+    display: block;
+    font-size: rem-calc(21);
+    padding: $grid-column-gutter/6 $grid-column-gutter/2;
+
+    &:focus,
+    &:hover {
+      background: $dark-blue;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+.sub-menu {
+  list-style-type: none;
+  margin-bottom: $grid-column-gutter/4;
 }
 @include breakpoint(xxlarge) {
   .menu-button {
     display: none;
   }
-}
 
-// Hauptnavigation
-
-#main-menu {
-  list-style-type: none;
-  margin: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: $grid-column-gutter * 1.85;
-  background: $blue;
-  z-index: 1000;
-
-  a {
-    display: block;
-    color: $dark-blue;
-    padding: $grid-column-gutter/6;
-    font-size: rem-calc(18);
-  }
-}
-
-#main-menu .sub-menu {
-  list-style-type: none;
-
-  a {
-    color: $dark-blue;
-    background: $blue;
-    &:hover,
-    &:focus {
-      background: $dark-blue;
-      color: $white;
-    }
-  }
-}
-
-@include breakpoint(xxlarge) {
   #main-menu {
-    width: 30%;
-    top: 0;
-    display: block !important ;
-    padding:0 $grid-column-gutter;
-    a {
-      font-size: rem-calc(30);
-      padding-top: $grid-column-gutter/8;
-      padding-bottom: $grid-column-gutter/8;
-    }
-  }
+    display: block !important;
+    max-width: rem-calc(600);
 
-  .sub-menu {
-    margin-right: $grid-column-gutter/4;
   }
 }
 // Logo
 
 .logo {
-  margin-left: $grid-column-gutter * 1.5;
+  margin-left: $grid-column-gutter * 2;
   display: block;
-  padding: $grid-column-gutter / 4 0;
+  padding: $grid-column-gutter/6 0;
 
   img {
-    width: rem-calc(250);
+    width: rem-calc(225);
     height: auto;
   }
 }
 
-@include breakpoint(xlarge) {
+@include breakpoint(xxlarge) {
   .logo {
-    width: rem-calc(400);
-    margin: 0 auto;
-    text-align: center;
+    margin-left: $grid-column-gutter * 10.5;
+    padding: $grid-column-gutter/2 0;
+
     img {
-      width: 100%;
+      width: rem-calc(350);
       height: auto;
     }
   }
@@ -235,11 +224,28 @@ img {
     background: $light-blue;
   }
 }
-@include breakpoint(xlarge) {
+@include breakpoint(large) {
+  .wp-block-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .main .section {
     .wp-block-columns {
-      display: flex;
-      flex-wrap: wrap;
+      margin-left: -$grid-column-gutter/8;
+      margin-right: -$grid-column-gutter/8;
+    }
+
+    .wp-block-column {
+      padding: 0 $grid-column-gutter/8;
+
+      &:nth-child(1) {
+        width: 70%;
+      }
+
+      &:nth-child(2) {
+        width: 30%;
+      }
     }
   }
 }
@@ -250,71 +256,77 @@ img {
 }
 @include breakpoint(xlarge) {
   .breadcrumb {
-    padding: $grid-column-gutter/6;
-    display:block;
+    display: block;
+    padding: $grid-column-gutter/4 0 $grid-column-gutter/2 0;
+  }
 
-    span {
-      font-size: rem-calc(18) * 0.85;
-      color: $black;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      display: inline-block;
-      font-size:rem-calc(18);
-    }
+  #breadcrumb-menu {
+    display: inline;
+    font-size: rem-calc(18);
 
     li {
-      display: inline-block;
-      position: relative;
+      display: inline;
+      padding-right: $grid-column-gutter/8;
     }
 
-    a {
-      padding-right: $grid-column-gutter/2;
-      position: relative;
-      color: $black;
-
-      &:focus,
-      &:hover {
-        text-decoration: none;
-      }
+    li::after {
+      content: '»';
+      padding-left: $grid-column-gutter/8;
     }
 
-  li span{
-      &:after {
-          content: "»";
-      }
-      margin: 0 rem-calc(7);
-      position: absolute;
-      top: 0;
-      right: rem-calc(10);
-
+    li:last-child::after {
+      display: none;
     }
   }
 }
 //Boxen
+
+
 .box {
-  padding: $grid-column-gutter / 4;
+  padding: $grid-column-gutter/4;
+  margin-bottom: $grid-column-gutter/4;
 
   a {
-    padding: $grid-column-gutter/2 $grid-column-gutter/4 0;
     display: block;
     position: relative;
-    margin-left: -$grid-column-gutter/4;
-    margin-right: -$grid-column-gutter/4;
-    margin-bottom: -$grid-column-gutter/4;
-    text-decoration: none;
+  }
+
+  .link {
+    margin: 0 -$grid-column-gutter/4;
+  }
+
+  .text {
+    color: $black;
+    padding: $grid-column-gutter/2.25 $grid-column-gutter/4 $grid-column-gutter $grid-column-gutter/4;
+
+    h3 {
+      margin-bottom: $grid-column-gutter;
+    }
   }
 
   .symbol {
     width: rem-calc(60);
     height: rem-calc(60);
     position: absolute;
-    top: $grid-column-gutter / 3.2;
-    right: $grid-column-gutter / 4;
+    top: $grid-column-gutter/4;
+    right: $grid-column-gutter/4;
   }
 }
+
+@include breakpoint(xlarge) {
+  .box {
+    padding: $grid-column-gutter/4;
+      .link {
+        text-decoration: none;
+      }
+    .text {
+      h3 {
+        font-size: rem-calc(24);
+      }
+    }
+  }
+}
+// Head Box
 
 .head-box {
   background: $dark-blue;
@@ -331,6 +343,7 @@ img {
     color: $white;
   }
 }
+// Inhalt Box
 
 .content-box {
   ul {
@@ -339,126 +352,98 @@ img {
 
   li {
     display: block;
-    padding: $grid-column-gutter / 4;
-    margin-left: -$grid-column-gutter / 4;
-    margin-right: -$grid-column-gutter / 4;
+    padding: $grid-column-gutter/4;
+    margin-left: -$grid-column-gutter/4;
+    margin-right: -$grid-column-gutter/4;
 
     &:nth-child(odd) {
       background: $blue;
     }
 
     &:before {
-      content: "»";
+      content: '»';
       margin-right: rem-calc(10);
     }
   }
 }
+// Info Box
 
-.teaser-box {
-  &.t-peach {
-    border-bottom: solid $peach rem-calc(4);
+.info-box {
+  background: $green;
+  .link {
+    position: relative;
+
+    img {
+      position: absolute;
+      bottom: rem-calc(100);
+      width: rem-calc(80);
+    }
   }
 }
 .info-box {
+  .link {
+    .text {
+      padding-bottom: $grid-column-gutter*3.35;
+    }
+  }
 }
+// Teaser Boxen
 
-@include breakpoint(xlarge) {
+.teaser-box {
+  background: $white;
+  border-bottom: 10px solid;
+
+  &.peach {
+    border-color: $peach;
+  }
 }
+// Zitat
 
 #quote {
   border: none;
-  padding: $grid-column-gutter * 2 $grid-column-gutter/4;
+  padding: $grid-column-gutter $grid-column-gutter/4;
+
   p {
     color: $dark-blue;
     margin: 0;
-    cite {
-      &:before {
-        display: none;
-      }
-    }
   }
-}
 
-@include breakpoint(large) {
-  #quote {
-    p {
-      font-size: rem-calc(30);
-      cite {
-        font-size: rem-calc(22);
-      }
+  cite {
+    margin-top: $grid-column-gutter/4;
+
+    &:before {
+      display: none;
     }
   }
 }
+// Footer
+
 .footer {
-  padding-top: $grid-column-gutter;
-}
-.footer .wp-block-columns {
-}
+  background: $blue;
+  padding: $grid-column-gutter/2 $grid-column-gutter/4;
 
-.footer .wp-block-column {
-  padding: $grid-column-gutter/4;
-  p {
-    font-size: rem-calc(20);
+  #footer-main-menu,
+  #footer-service-menu {
+    list-style: none;
+    margin-left: 0;
   }
-  a {
-    font-size: rem-calc(20);
-    color: $black;
-    &:hover,
-    &:focus {
-      text-decoration: none;
-      background: $dark-blue;
-      color: $white;
-    }
-  }
-}
 
-//footer navigationen
-#footer-main-menu {
-  list-style: none;
-  margin: 0;
-  margin-left: -$grid-column-gutter/4;
-  margin-right: -$grid-column-gutter/4;
   a {
     display: block;
-    padding: $grid-column-gutter/8 $grid-column-gutter/4;
-    &:hover,
-    &:focus {
-      text-decoration: none;
-      background: $dark-blue;
+
+    &:focus,
+    &:hover {
       color: $white;
+      text-decoration: none;
     }
   }
 }
+@include breakpoint(large) {
+  .footer {
+    padding: $grid-column-gutter/2;
 
-#footer-service-menu {
-  list-style: none;
-  margin: 0;
-  margin-left: -$grid-column-gutter/4;
-  margin-right: -$grid-column-gutter/4;
-  a {
-    display: block;
-    padding: $grid-column-gutter/8 $grid-column-gutter/4;
-    &:hover,
-    &:focus {
-      text-decoration: none;
-      background: $dark-blue;
-      color: $white;
+    .wp-block-columns {
+      justify-content: space-between;
     }
-  }
-}
-
-@include breakpoint(xlarge) {
-  .footer .wp-block-columns {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .footer .wp-block-column {
-    width: 33%;
-  }
-}
-.copyright {
-  padding: $grid-column-gutter $grid-column-gutter/4 $grid-column-gutter/4;
-  p {
-    margin: 0;
   }
 }
