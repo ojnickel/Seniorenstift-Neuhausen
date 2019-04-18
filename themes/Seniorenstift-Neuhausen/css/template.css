@@ -984,11 +984,15 @@ img {
   width: 100%;
   height: auto; }
 
-p, ul, ol {
+p,
+ul,
+ol {
   font-size: 1.16667rem; }
 
 @media screen and (min-width: 64em) {
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     font-size: 1.44444rem; } }
 
 .header {
@@ -1144,6 +1148,12 @@ p, ul, ol {
     .main .section .wp-block-column:nth-child(2) {
       width: 30%; } }
 
+@media screen and (min-width: 64em) {
+  .main .section .wp-block-column:nth-child(1) {
+    width: 70%; }
+  .main .section .wp-block-column:nth-child(2) {
+    width: 30%; } }
+
 .breadcrumb {
   display: none; }
 
@@ -1158,7 +1168,7 @@ p, ul, ol {
       display: inline;
       padding-right: 0.41667rem; }
     #breadcrumb-menu li::after {
-      content: '»';
+      content: "»";
       padding-left: 0.41667rem; }
     #breadcrumb-menu li:last-child::after {
       display: none; } }
@@ -1170,18 +1180,28 @@ p, ul, ol {
     display: block;
     position: relative; }
   .box .link {
-    margin: -0.83333rem; }
+    margin: -0.83333rem;
+    text-decoration: none; }
   .box .text {
     color: #000000;
     padding: 1.48148rem 0.83333rem 3.33333rem 0.83333rem; }
     .box .text h3 {
+      font-size: 1.33333rem;
       margin-bottom: 3.33333rem; }
   .box .symbol {
     width: 3.33333rem;
     height: 3.33333rem;
     position: absolute;
     top: 0.83333rem;
-    right: 0.83333rem; }
+    right: 0.83333rem;
+    -webkit-transition: -webkit-transform 0.15s ease-in-out;
+    transition: -webkit-transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out; }
+    .box .symbol.symbol:focus, .box .symbol.symbol:hover {
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
 
 @media screen and (min-width: 64em) {
   .box {
@@ -1222,7 +1242,7 @@ p, ul, ol {
   .content-box li:nth-child(odd) {
     background: #B0D2DF; }
   .content-box li:before {
-    content: '»';
+    content: "»";
     margin-right: 0.55556rem; }
 
 .info-box {

@@ -1,7 +1,7 @@
 @charset 'utf-8';
-@import 'settings';
-@import 'mixins';
-@import 'foundation';
+@import "settings";
+@import "mixins";
+@import "foundation";
 @include foundation-global-styles;
 @include foundation-typography;
 @include foundation-forms;
@@ -49,12 +49,16 @@ img {
   height: auto;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   font-size: rem-calc(21);
 }
 
 @include breakpoint(xlarge) {
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     font-size: rem-calc(26);
   }
 }
@@ -69,9 +73,9 @@ p, ul, ol {
 .menu-button {
   cursor: pointer;
   background: $blue;
-  height: $grid-column-gutter*1.5;
+  height: $grid-column-gutter * 1.5;
   margin-right: $grid-column-gutter/4;
-  width: $grid-column-gutter*1.5;
+  width: $grid-column-gutter * 1.5;
 
   &.active {
     .menu-button-inner {
@@ -88,7 +92,8 @@ p, ul, ol {
       &::after {
         bottom: 0;
         transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: bottom 0.1s ease-out,
+          transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
   }
@@ -135,11 +140,11 @@ p, ul, ol {
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
   }
 
-
   &::after {
     bottom: rem-calc(11);
     right: rem-calc(0);
-    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.25s ease-in,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
 
@@ -189,7 +194,6 @@ p, ul, ol {
   #main-menu {
     display: block !important;
     max-width: rem-calc(600);
-
   }
 }
 // Logo
@@ -224,6 +228,7 @@ p, ul, ol {
     background: $light-blue;
   }
 }
+
 @include breakpoint(large) {
   .wp-block-columns {
     display: flex;
@@ -239,6 +244,19 @@ p, ul, ol {
     .wp-block-column {
       padding: 0 $grid-column-gutter/8;
 
+      &:nth-child(1) {
+        width: 70%;
+      }
+
+      &:nth-child(2) {
+        width: 30%;
+      }
+    }
+  }
+}
+@include breakpoint(xlarge) {
+  .main .section {
+    .wp-block-column {
       &:nth-child(1) {
         width: 70%;
       }
@@ -270,7 +288,7 @@ p, ul, ol {
     }
 
     li::after {
-      content: '»';
+      content: "»";
       padding-left: $grid-column-gutter/8;
     }
 
@@ -280,7 +298,6 @@ p, ul, ol {
   }
 }
 //Boxen
-
 
 .box {
   padding: $grid-column-gutter/4;
@@ -293,13 +310,17 @@ p, ul, ol {
 
   .link {
     margin: 0 -$grid-column-gutter/4;
+    text-decoration: none;
+  
   }
 
   .text {
     color: $black;
-    padding: $grid-column-gutter/2.25 $grid-column-gutter/4 $grid-column-gutter $grid-column-gutter/4;
+    padding: $grid-column-gutter/2.25 $grid-column-gutter/4 $grid-column-gutter
+      $grid-column-gutter/4;
 
     h3 {
+      font-size: rem-calc(24);
       margin-bottom: $grid-column-gutter;
     }
   }
@@ -310,15 +331,25 @@ p, ul, ol {
     position: absolute;
     top: $grid-column-gutter/4;
     right: $grid-column-gutter/4;
+
+    transition: transform 0.15s ease-in-out;
+    &.symbol {
+      &:focus,
+      &:hover {
+        transform: rotate(-45deg);
+      }
+    }
+
   }
+
 }
 
 @include breakpoint(xlarge) {
   .box {
     padding: $grid-column-gutter/4;
-      .link {
-        text-decoration: none;
-      }
+    .link {
+      text-decoration: none;
+    }
     .text {
       h3 {
         font-size: rem-calc(24);
@@ -361,7 +392,7 @@ p, ul, ol {
     }
 
     &:before {
-      content: '»';
+      content: "»";
       margin-right: rem-calc(10);
     }
   }
@@ -383,7 +414,7 @@ p, ul, ol {
 .info-box {
   .link {
     .text {
-      padding-bottom: $grid-column-gutter*3.35;
+      padding-bottom: $grid-column-gutter * 3.35;
     }
   }
 }
