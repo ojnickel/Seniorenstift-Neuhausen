@@ -311,7 +311,6 @@ ol {
   .link {
     margin: 0 -$grid-column-gutter/4;
     text-decoration: none;
-  
   }
 
   .text {
@@ -339,9 +338,7 @@ ol {
         transform: rotate(-45deg);
       }
     }
-
   }
-
 }
 
 @include breakpoint(xlarge) {
