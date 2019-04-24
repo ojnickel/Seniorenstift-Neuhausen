@@ -995,6 +995,20 @@ ol {
   ol {
     font-size: 1.44444rem; } }
 
+.box .link .symbol {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.15s ease-in-out;
+  transition: -webkit-transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out; }
+
+.box .link:focus .symbol, .box .link:hover .symbol {
+  -webkit-transform: translateX(0) rotate(-45deg);
+      -ms-transform: translateX(0) rotate(-45deg);
+          transform: translateX(0) rotate(-45deg); }
+
 .header {
   position: relative; }
 

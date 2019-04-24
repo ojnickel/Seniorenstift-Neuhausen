@@ -63,6 +63,23 @@ ol {
   }
 }
 
+// placeholder
+
+%btn-rotate {
+  .symbol {
+    transform: translateX(0);
+    transition: transform 0.15s ease-in-out;
+  }
+
+  &:focus,
+  &:hover {
+    .symbol {
+      transform: translateX(0) rotate(-45deg);
+    }
+  }
+}
+
+
 // Header
 .header {
   position: relative;
@@ -309,6 +326,7 @@ ol {
   }
 
   .link {
+    @extend %btn-rotate;
     margin: 0 -$grid-column-gutter/4;
     text-decoration: none;
   }
